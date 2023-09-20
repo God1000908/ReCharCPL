@@ -4,4 +4,4 @@ project(ReCharCPL C)
 set(CMAKE_C_STANDARD  17)
 
 add_executable(guess guess.c)
-add_executable( Hello Hello world.c)
+add_executable(Hello Hello.c)
