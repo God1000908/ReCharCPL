@@ -1,0 +1,7 @@
+add_executable(A-ASCII A-ASCII.c)
+add_executable(B-change B-change.c)
+add_executable(C-PI C-PI.c)
+add_executable(D-time D-time.c)
+add_executable(E-julian E-julian.c)
+add_executable(F-gravity F-gravity.c)
+add_executable(G-equation G-equation.c)
