@@ -5,3 +5,4 @@ set(CMAKE_C_STANDARD 17)
 
 add_subdirectory(homework)
 add_subdirectory(0-class)
+add_subdirectory(3-class)
