@@ -1,3 +1,6 @@
+//
+// Created by zy337 on 2023/10/21.
+//
 #include <stdio.h>
 int main() {
     int n;
