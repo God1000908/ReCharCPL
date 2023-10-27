@@ -28,14 +28,14 @@ int main()
             old_num[i] = num[i - 3];
         for (int i = 3; i < 1010; i++) {
             int neighbor = old_num[i - 3] + old_num[i - 2] + old_num[i - 1] +
-                           old_num[i + 1] + old_num[i + 2] + old_num[i + 3];
+                    old_num[i + 1] + old_num[i + 2] + old_num[i + 3];
             if (old_num[i] == 0) {
                 if (neighbor >= 4 && neighbor <= 8 && old_num[i - 3] != 1 && old_num[i - 2] != 1
                     && old_num[i - 1] != 1 && old_num[i + 1] != 1 && old_num[i + 2] != 1 && old_num[i + 3] != 1) {
                     num[i - 3] = 2;
                 } else if (neighbor >= 2 && neighbor <= 4 && old_num[i - 3] != 2 && old_num[i - 2] != 2
-                           && old_num[i - 1] != 2 && old_num[i + 1] != 2 && old_num[i + 2] != 2 &&
-                           old_num[i + 3] != 2) {
+                && old_num[i - 1] != 2 && old_num[i + 1] != 2 && old_num[i + 2] != 2 &&
+                old_num[i + 3] != 2) {
                     num[i - 3] = 1;
                 }
             } else if (old_num[i] == 1) {
