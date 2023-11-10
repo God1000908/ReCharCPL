@@ -1,0 +1,8 @@
+add_executable(main-re main-re.c)
+add_executable(min2 min2.c)
+add_executable(min-re min-re.c)
+add_executable(sum-re sum-re.c)
+add_executable(fib-re fib-re.c)
+add_executable(fib-iter fib-iter.c)
+add_executable(bsearch-re bsearch-re.c)
+add_executable(binary-search-re binary-search-re.c)
