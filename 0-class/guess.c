@@ -14,30 +14,24 @@ int main()
         sum ++;
         printf("Please input your guess number:");
         scanf("%d",&guess);
-        if(guess>a&&chance>0)
-        {
+        if(guess>a&&chance>0){
             printf("Guess number is bigger!You still have %d chances!\n",chance);
         }
-        else if(guess<a&&chance>0)
-        {
+        else if(guess<a&&chance>0){
             printf("Guess number is smaller!You still have %d chances!\n",chance);
         }
-        else if(guess==a&&chance>0)
-        {
+        else if(guess==a&&chance>0){
             printf("Congratulations!But there is no reward...\n");
             break;
         }
-        else if(chance==0)
-        {
+        else if(chance==0){
             printf("You already have no chance!\n");
         }
     }while(chance>=0);
-    if(sum<5)
-    {
+    if(sum<5){
         printf("You have guessed %d times!\n",sum);
     }
-    else
-    {
+    else{
         printf("You have failed!\n");
     }
     return 0;
