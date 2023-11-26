@@ -10,3 +10,5 @@ add_subdirectory(test)
 add_subdirectory(4-class)
 add_subdirectory(5-class)
 add_subdirectory(7-class)
+add_subdirectory(8-class)
+

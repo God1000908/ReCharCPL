@@ -13,12 +13,12 @@ void selectsort(int *num, int n)
     if(n < 2) return;
     int index = 0;
     for (int i = 0; i < n; ++i) {
-        if(num[index] > num[i]) {
+        if(*(num + index) > *(num + i)) {
             index = i;
         }
     }
     if(index != 0)
-        swap(&num[0], &num[index]);
+        swap(num, num + index);
     selectsort(num + 1, n - 1);
 }
 int main()
