@@ -14,47 +14,29 @@ bool pour(int a, int b, int c, int a0, int b0, int c0, int k, int VA, int VB, in
     if (k == 0) {
         return 0;
     }
-    int pourAtoB = (a < VB - b) ? a : (VB - b);
+    int pourAtoB = min(a, VB - b);
     if (pourAtoB > 0 && pour(0, b + pourAtoB, c, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
     }
-    int pourAtoC = (a < VC - c) ? a : (VC - c);
+    int pourAtoC = min(a, VC - c);
     if (pourAtoC > 0 && pour(0, b, c + pourAtoC, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
     }
-    int pourBtoA = (b < VA - a) ? b : (VA - a);
+    int pourBtoA = min(b, VA - a);
     if (pourBtoA > 0 && pour(a + pourBtoA, 0, c, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
     }
-    int pourBtoC = (b < VC - c) ? b : (VC - c);
+    int pourBtoC = min(b, VC - c);
     if (pourBtoC > 0 && pour(a, 0, c + pourBtoC, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
     }
-    int pourCtoA = (c < VA - a) ? c : (VA - a);
+    int pourCtoA = min(c, VA - a);
     if (pourCtoA > 0 && pour(a + pourCtoA, b, 0, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
     }
-    int pourCtoB = (c < VB - b) ? c : (VB - b);
+    int pourCtoB = min(c, VB - b);
     if (pourCtoB > 0 && pour(a, b + pourCtoB, 0, a0, b0, c0, k - 1, VA, VB, VC)) {
         return 1;
-    }
-    if (a > 0 && b > 0) {
-        int mixABtoC = min(a, min(b, VC - c));
-        if (pour(a - mixABtoC, b - mixABtoC, c + mixABtoC, a0, b0, c0, k - 1, VA, VB, VC)) {
-            return 1;
-        }
-    }
-    if (a > 0 && c > 0) {
-        int mixACtoB = min(a, min(c, VB - b));
-        if (pour(a - mixACtoB, b + mixACtoB, c - mixACtoB, a0, b0, c0, k - 1, VA, VB, VC)) {
-            return 1;
-        }
-    }
-    if (b > 0 && c > 0) {
-        int mixBCtoA = min(b, min(c, VA - a));
-        if (pour(a + mixBCtoA, b - mixBCtoA, c - mixBCtoA, a0, b0, c0, k - 1, VA, VB, VC)) {
-            return 1;
-        }
     }
     return 0;
 }
