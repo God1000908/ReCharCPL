@@ -10,9 +10,9 @@ int main()
 {
     char *str1 = malloc(LEN * sizeof(*str1));
     char *str2 = malloc(LEN * sizeof(*str2));
-    gets(str1);
+    fgets(str1, LEN, stdin);
     fflush(stdin);
-    gets(str2);
+    fgets(str2, LEN, stdin);
     unsigned long long len1 = strlen(str1);
     unsigned long long len2 = strlen(str2);
     for (int i = 0; i < len1; ++i) {

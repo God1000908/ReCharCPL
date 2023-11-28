@@ -3,7 +3,6 @@
 //
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
 #define SIZE 750
 int ch[SIZE][SIZE];
 int x[SIZE * SIZE];

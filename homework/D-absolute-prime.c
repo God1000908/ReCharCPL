@@ -24,7 +24,7 @@ int rev(int n)
     int rr = 0;
     for(int i = count - 1; i >= 0; i --)
     {
-        rr = rr +  pow(10, i) * num[count - 1 - i];
+        rr = rr +  (int)pow(10.0, (double)i) * num[count - 1 - i];
     }
     return rr;
 }

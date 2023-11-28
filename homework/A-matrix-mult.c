@@ -5,9 +5,6 @@
 int main()
 {
     int m, n, p;
-    int x = 0;
-    int count = 0;
-    int mm = 0;
     scanf("%d %d %d", &m, &n, &p);
     int num1[101][101] = { 0 };
     int num2[101][101] = { 0 };

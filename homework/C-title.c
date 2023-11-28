@@ -9,8 +9,8 @@
 int main()
 {
     char *str = malloc(LEN * sizeof(*str));
-    fgets(str, 4100, stdin);
-    int len = strlen(str);
+    fgets(str, LEN, stdin);
+    unsigned long long len = strlen(str);
     bool flag = true;
     for (int i = 0; i < len; ++i) {
         if(*(str + i) == ' '){
