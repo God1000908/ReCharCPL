@@ -2,54 +2,32 @@
 // Created by zy337 on 2023/11/18.
 //
 #include <stdio.h>
-#include <stdbool.h>
-#define SIZE 100005
-typedef struct {
-    char str[SIZE];
-    int top;
-} Stack;
-void ini(Stack *stack) {
-    stack->top = -1;
-}
-void push(Stack *stack, char a) {
-    if (stack->top < SIZE - 1) {
-        stack->top++;
-        stack->str[stack->top] = a;
-    }
-}
-char pop(Stack *stack) {
-    char a = '\0';
-    if (stack->top >= 0) {
-        a = stack->str[stack->top];
-        stack->top--;
-    }
-    return a;
-}
-bool point(const char *str) {
-    Stack stack;
-    ini(&stack);
-    for (int i = 0; str[i] != '\0'; i++) {
-        char a = str[i];
-        if (a == '(' || a == '[' || a == '{') {
-            push(&stack, a);
-        } else if (a == ')' || a == ']' || a == '}') {
-            char b = pop(&stack);
-            if ((a == ')' && b != '(') ||
-                (a == ']' && b != '[') ||
-                (a == '}' && b != '{')) {
-                return false;
+#define MAX_LEN 100005
+int main() {
+    char stack[MAX_LEN];
+    int T = 0;
+    scanf("%d", &T);
+    char str[MAX_LEN];
+    for (int i = 0; i < T; ++i) {
+        int s_top = -1;
+        scanf("%100005s",str);
+        for (int j = 0; str[j] != '\0'; ++j) {
+            if(str[j] == '(' || str[j] == '{' || str[j] == '[')
+                stack[++s_top] = str[j];
+            char t;
+            if(str[j] == ')' || str[j] == '}' || str[j] == ']') {
+                t = str[j];
+                if (s_top != -1 && (stack[s_top] == '(' && t == ')' ||
+                    stack[s_top] == '[' && t == ']' ||
+                    stack[s_top] == '{' && t == '}')) {
+                    s_top--;
+                } else if (s_top != -1 && (stack[s_top] == '(' && t != ')' ||
+                        stack[s_top] == '[' && t != ']' ||
+                        stack[s_top] == '{' && t != '}'))
+                    break;
             }
         }
-    }
-    return stack.top == -1;
-}
-int main() {
-    int T;
-    scanf("%d", &T);
-    while (T--) {
-        char str[SIZE];
-        scanf("%s", str);
-        if (point(str)) {
+        if (s_top == -1) {
             printf("True\n");
         } else {
             printf("False\n");
