@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
-char str[4100][4100] = { 0 };
+char str1[4100][4100] = { 0 };
 char result[4100][9] = { 0 };
 char reserved[17][10] = {"const","int","float","char",
                          "void","static","double","return",
@@ -41,18 +41,18 @@ int process(const char *str)
         }
         for (int i = digit + 1; i < len; ++i) {
             temp2[i - 1 - digit] = str[i];
-        }//printf("%s %s %s\n", temp1, temp3, temp2);
+        }
         if (temp1[0] != '\0') {
             if(process(temp1)){
                 global1 = true;
             }else global1 = false;
-        }//printf("%d\n", global1);
+        }
         process(temp3);
         if (temp2[0] != '\0') {
             if(process(temp2)){
                 global2 = true;
             }else global2 = false;
-        }//printf("%d %d %d\n", global1, global2,global1 && global2);
+        }
         if(global1 && global2){
             return 1;
         }else return 0;
@@ -116,9 +116,8 @@ int main()
 {
     int i = 0;
     bool flag = true;
-    while((scanf("%4100s", str[i])) != EOF){
-        //printf("%d\n", process(str[i]));
-        if(process(str[i])){
+    while((scanf("%4100s", str1[i])) != EOF){
+        if(process(str1[i])){
             flag = true;
         }else {
             flag = false;
