@@ -10,6 +10,8 @@
 // TODO: adding code here
 
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 // (1) define data type: circular singly link list
 typedef struct node {
     int val;

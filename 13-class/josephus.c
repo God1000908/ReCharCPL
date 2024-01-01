@@ -2,8 +2,6 @@
 // Created by zy337 on 2023/12/29.
 //
 #include "ll\ll.h"
-#include <stdio.h>
-#include <assert.h>
 #define NUM 12
 
 void sit_around_circle(linked_list *list, int num);

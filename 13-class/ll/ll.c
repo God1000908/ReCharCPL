@@ -3,8 +3,6 @@
 //
 
 #include "ll.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 // TODO: functions on linked list (implementations)
 
